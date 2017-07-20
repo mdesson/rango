@@ -43,4 +43,4 @@ Thumbs.db
 
 # Local Files #
 /rango
-db.sqlite3
+/tango_with_django_project/db.sqlite3
