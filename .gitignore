@@ -43,3 +43,4 @@ Thumbs.db
 
 # Local Files #
 /rango
+db.sqlite3
