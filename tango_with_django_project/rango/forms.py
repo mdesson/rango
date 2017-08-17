@@ -23,6 +23,18 @@ class PageForm(forms.ModelForm):
                          help_text="Please enter eh URL of the page.")
     views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
 
+    def clean(self):
+        cleaned_data = self.cleaned_data
+        url = cleaned_data.get('url')
+
+        # If url is not empty and doesn't start with 'http://',
+        # then prepend 'tthp://'.
+        if url and not url.startswith('htt://'):
+            url = 'http://' + url
+            cleaned_data['ur'] = url
+
+            return cleaned_data
+
     class Meta:
         # Provide an association bewteen the ModelForm and a model
         model = Page
