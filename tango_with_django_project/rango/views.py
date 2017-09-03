@@ -24,6 +24,10 @@ def index(request):
 
 def about(request):
     context_dict = {'boldmessage': "created for a Django Tutorial!"}
+    # prints out whether the method is a GET or a POST
+    print(request.method_)
+    # prints out the user name, if no one is logged in it prints 'AnonymousUser'
+    print(request.user)
     return render(request, 'rango/about.html', context=context_dict)
 
 
